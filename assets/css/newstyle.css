@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  scroll-snap-type: y mandatory; /* Snap vertical */
+  overflow-y: scroll;
+  background-color: #0d1429;
+scroll-behavior: smooth;
+}
+.page-section {
+    height: 100vh;              /* full viewport height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    overflow: hidden;
+}
+
+/* Gradients */
+.section1 {
+    background: linear-gradient(180deg, #0e1228, #0e1228);
+}
+.section2 {
+    background: linear-gradient(180deg, #0e1228, #0e1228);
+}
+.section3 {
+    background: linear-gradient(180deg, #0e1228, #0e1228);
+}
+.section4 {
+    background: linear-gradient(180deg, #12162d, #1f264d);
+}
+.section5 {
+    background: linear-gradient(180deg, #1f264d, #2f3c6b);
+}
+
+/* Desktop image rules */
+.section-img {
+    height: 100vh;          /* full height of viewport */
+    width: auto;            /* auto width to maintain aspect ratio */
+    object-fit: contain;
+}
+
+/* Mobile image rules */
+@media (max-width: 1024px) {
+    .section-img {
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+    }
+}
