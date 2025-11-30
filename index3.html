@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Scroll Landing</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            scroll-snap-type: y mandatory;   /* Snap vertical */
+            overflow-y: scroll;
+        }
+
+        /* Each section */
+        .page-section {
+            height: 100vh;                  /* full screen */
+            scroll-snap-align: start;       /* snap point */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Section 1 -->
+    <section class="page-section" style="background-image: url('./assets/images/mikimoto/mikimoto-1.jpg');">
+    </section>
+
+    <!-- Section 2 -->
+    <section class="page-section" style="background-image: url('./assets/images/mikimoto/mikimoto-2.jpg');">
+    </section>
+
+    <!-- Section 3 -->
+    <section class="page-section" style="background-image: url('./assets/images/mikimoto/mikimoto-3.jpg');">
+    </section>
+
+    <!-- Section 4 -->
+    <section class="page-section" style="background-image: url('./assets/images/mikimoto/mikimoto-4.jpg');">
+    </section>
+
+    <!-- Section 5 -->
+    <section class="page-section" style="background-image: url('./assets/images/mikimoto/mikimoto-5.jpg');">
+    </section>
+
+</body>
+</html>

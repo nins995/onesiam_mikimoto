@@ -163,6 +163,7 @@
   
   
   
+  <script src="./assets/js/swiper.min.js"></script>
   <script src="https://campaign.onesiam.com/luxury/assets/franck2//assets/js/franckscript.js?66778899"></script>
 
 
@@ -170,6 +171,18 @@
 
   <script>
    
+     var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+  
+
     function initFullPageIfNeeded() {
       if (window.innerWidth > 768) {
         if (!document.body.classList.contains('fp-enabled')) {
