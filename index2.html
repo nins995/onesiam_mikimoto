@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="FRANCK MULLER V32SCATFOAC">
     <meta name="author" content="">  
-    <title>FRANCK MULLER </title>
+    <title>MIKIMOTO</title>
     <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/css/style.css?788999" rel="stylesheet">
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-    <link href="https://campaign.onesiam.com/luxury/assets/css/flatpickr.min.css" rel="stylesheet"> 
+    <link href="./assets/css/style2.css?788999" rel="stylesheet">
     <link href="https://campaign.onesiam.com/luxury/assets/css/bootstrap-icons.css" rel="stylesheet">
 
   </head>
@@ -29,6 +27,11 @@
   </header>
 
   <main  id="fullPage" class="fp-wrapper">
+
+
+
+
+
    <section class="fp-section" id="accessories-01" data-anchor="accessories-01" >
       <div class="section section-top"> 
         
@@ -120,9 +123,22 @@
   </section>
 
   <section class="fp-section" id="accessories-04"  data-anchor="accessories-04" >
-    <div class="section section-top"> 
+    <div class="section section-top position-relative"> 
       <!-- Cover -->
       <div class="bg-cover bg-04" > <a href="#accessories-02" class="rect-area --btn4"></a></div>
+        <div class="position-absolute">
+        <div class="slider-container">
+          <div class="slider">
+            <img src="./assets/images/mikimoto/product1.png?text=Slide+1">
+            <img src="./assets/images/mikimoto/product2.png?text=Slide+2">
+            <img src="./assets/images/mikimoto/product3.png?text=Slide+3">
+            <img src="./assets/images/mikimoto/product4.png?text=Slide+4">
+          </div>
+
+          <button class="prev">❮</button>
+          <button class="next">❯</button>
+        </div>
+        </div>
       
     </div>
   </section>
@@ -153,6 +169,9 @@
 
 
 
+  
+
+
   </main>
   <script src="https://campaign.onesiam.com/luxury/assets/js/flatpickr.js"></script>
   <script src="https://campaign.onesiam.com/luxury/assets/franck2//assets/js/jquery.min.js"></script>
@@ -165,46 +184,89 @@
 
   <script>
    
-    const sections = ['accessories-01', 'accessories-02', 'accessories-03', 'accessories-04', 'accessories-05', 'accessories-06', 'accessories-07'];
-  let currentIndex = 0;
-  let isScrolling = false;
+  //   const sections = ['accessories-01', 'accessories-02', 'accessories-03', 'accessories-04', 'accessories-05', 'accessories-06', 'accessories-07'];
+  // let currentIndex = 0;
+  // let isScrolling = false;
 
-  function scrollToSection(index) {
-    if (index >= 0 && index < sections.length) {
-      const target = document.getElementById(sections[index]);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        currentIndex = index;
-      }
-    }
-  }
+  // function scrollToSection(index) {
+  //   if (index >= 0 && index < sections.length) {
+  //     const target = document.getElementById(sections[index]);
+  //     if (target) {
+  //       target.scrollIntoView({ behavior: 'smooth' });
+  //       currentIndex = index;
+  //     }
+  //   }
+  // }
 
-  function handleScroll(event) {
-    if (isScrolling) return;
+  // function handleScroll(event) {
+  //   if (isScrolling) return;
 
-    const delta = event.deltaY;
+  //   const delta = event.deltaY;
 
-    if (delta > 0 && currentIndex < sections.length - 1) {
-      // Scroll down
-      isScrolling = true;
-  console.log(currentIndex + 1);
-      scrollToSection(currentIndex + 1);
-    } else if (delta < 0 && currentIndex > 0) {
-      // Scroll up
-      isScrolling = true;
-   console.log(currentIndex - 1);
-      scrollToSection(currentIndex - 1);
-    }
+  //   if (delta > 0 && currentIndex < sections.length - 1) {
+  //     // Scroll down
+  //     isScrolling = true;
+  // console.log(currentIndex + 1);
+  //     scrollToSection(currentIndex + 1);
+  //   } else if (delta < 0 && currentIndex > 0) {
+  //     // Scroll up
+  //     isScrolling = true;
+  //  console.log(currentIndex - 1);
+  //     scrollToSection(currentIndex - 1);
+  //   }
 
-    setTimeout(() => {
-      isScrolling = false;
-    }, 800); // หน่วงเพื่อกัน scroll ซ้ำ
-  }
+  //   setTimeout(() => {
+  //     isScrolling = false;
+  //   }, 800); // หน่วงเพื่อกัน scroll ซ้ำ
+  // }
 
-  window.addEventListener('wheel', handleScroll, { passive: false });
+  // window.addEventListener('wheel', handleScroll, { passive: false });
   
 
+let index = 0;
+const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slider img");
+const total = slides.length;
 
+function updateSlide() {
+  const width = slider.clientWidth;
+  slider.style.transform = `translateX(${-width * index}px)`;
+}
+
+function nextSlide() {
+  index = (index + 1) % total;
+  updateSlide();
+}
+
+function prevSlide() {
+  index = (index - 1 + total) % total;
+  updateSlide();
+}
+
+// ปุ่มกด
+document.querySelector(".next").onclick = nextSlide;
+document.querySelector(".prev").onclick = prevSlide;
+
+// Auto slide ทุก 3 วินาที
+let auto = setInterval(nextSlide, 3000);
+
+// หยุด auto เมื่อเอา mouse ไปวาง
+document.querySelector(".slider-container").onmouseenter = () => clearInterval(auto);
+document.querySelector(".slider-container").onmouseleave = () => auto = setInterval(nextSlide, 3000);
+
+// ปรับเมื่อหน้าจอเปลี่ยนขนาด
+window.onresize = updateSlide;
+
+// Touch slide (มือถือ)
+let startX = 0;
+
+slider.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+slider.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  if (endX < startX - 50) nextSlide();
+  if (endX > startX + 50) prevSlide();
+});
+</script>
   </script>
 
 </html>
