@@ -266,6 +266,17 @@ button:hover {
 }
 
 @media only screen and (max-width: 1024px) {
+.slider-container {   
+    width: 100%;
+    margin-left: 0vw;
+  }
+
+  .section4 .position-absolute {
+    top: 0%;
+  } 
+}
+
+@media only screen and (max-width: 767px) {
 
   .slider-container {   
     width: 100%;
@@ -274,7 +285,6 @@ button:hover {
 
   .section4 .position-absolute {
     top: 15%;
-  }
-  
+  } 
   
 }
