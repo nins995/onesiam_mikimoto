@@ -42,6 +42,7 @@ body {
 }
 
 .page-section {
+    position: relative;
   height: 100vh; /* full viewport height */
   width: 100%;
   display: flex;
@@ -82,4 +83,25 @@ body {
     height: auto;
     max-height: none;
   }
+}
+
+.section-btn {
+    position: absolute;   /* relative to section, moves with section */
+    bottom: 100px;        /* 100px from bottom of the section */
+    left: 50%;            /* center horizontally */
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.section-btn:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255,255,255,0.05);
 }
