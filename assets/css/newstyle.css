@@ -201,8 +201,9 @@ h1, h2 {
 
 .slider-container {
   position: relative;
-  width: 50%;
+  width: 45%;
   overflow: hidden;
+  margin-left: 12vw;
 }
 
 .slider {
@@ -242,6 +243,12 @@ button:hover {
 
   .slider-container {   
     width: 100%;
+    margin-left: 0vw;
   }
+
+  .section4 .position-absolute {
+    top: 15%;
+  }
+  
   
 }
