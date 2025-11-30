@@ -169,30 +169,56 @@ h1, h2 {
 
 /* === Right-Half Form (Section 3) === */
 .form-container.right {
-    left: 75%; /* center of right half */
-    transform: translate(-50%, -50%);
-    width: 50%;
+    position: absolute;
+    top: 50%;                 /* vertical center */
+    left: 75%;                /* center of right half */
+    transform: translate(-50%, -50%); /* horizontal center in right half and vertical center */
+    width: 50%;               /* occupy right half */
     max-width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
 }
 
-/* === Left-Half Form (Section 7) === */
+/* Left-half form (Section 7) */
 .form-container.left {
-    left: 25%; /* center of left half */
-    transform: translate(-50%, -50%);
-    width: 50%;
+    position: absolute;
+    top: 50%;                 /* vertical center */
+    left: 25%;                /* center of left half */
+    transform: translate(-50%, -50%); /* horizontal center in left half and vertical center */
+    width: 50%;               /* occupy left half */
     max-width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
 }
 
 /* === Mobile Responsive for Forms === */
 @media (max-width: 1024px) {
-    .form-container {
+    /* Left form fully centered */
+    .form-container.left {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
         max-width: none;
     }
-    .form-container .form-image {
+
+    /* Right form: horizontally centered, vertical at half of page */
+    .form-container.right {
+        left: 50%;
+        top: 56%;            /* still top 50% */
+        transform: translateX(-50%); /* only horizontal centering */
+        width: 80%;
+        max-width: none;
+    }
+    .form-container.right .form-image {
         display: none;
     }
 }
