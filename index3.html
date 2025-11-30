@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Full Page Scroll Landing</title>
+    <title>MIKIMOTO</title>
 
     <!-- Bootstrap 5 -->
     <link
@@ -42,7 +42,7 @@
           alt=""
         />
       </picture>
-      <a href="#next" class="section-btn">Make An Appointment</a>
+      <a href="#section3" class="section-btn">Make An Appointment</a>
     </section>
     <section class="page-section section2">
       <picture>
@@ -59,9 +59,9 @@
           alt=""
         />
       </picture>
-      <a href="#next" class="section-btn">Make An Appointment</a>
+      <a href="#section3" class="section-btn">Make An Appointment</a>
     </section>
-    <section class="page-section section3">
+    <section id="section3" class="page-section section3">
       <picture>
         <!-- Mobile image -->
         <source
@@ -76,6 +76,50 @@
           alt=""
         />
       </picture>
+      <!-- Right half div with form -->
+      <div class="form-container right">
+        <img
+          src="./assets/images/mikimoto/mikimoto-3-text.png"
+          class="form-image"
+          alt="Image"
+        />
+        <h1 class="text-white mt-4 mb-3">Discovery Now</h1>
+        <form class="form-content">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              placeholder="Phone"
+              inputmode="numeric"
+              maxlength="10"
+              required
+            />
+          </div>
+          <!-- Checkbox -->
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="termsCheck"
+            />
+            <label class="form-check-label" for="termsCheck">
+              Accept Customer Privacy
+            </label>
+          </div>
+          <!-- CAPTCHA placeholder -->
+          <div class="mb-3 text-white">[CAPTCHA]</div>
+          <button type="submit" class="btn-submit">Make An Appointment</button>
+        </form>
+      </div>
     </section>
     <section class="page-section section4">
       <picture>
@@ -106,7 +150,7 @@
           <button class="next">❯</button>
         </div>
         </div>
-      <a href="#next" class="section-btn">Make An Appointment</a>
+      <a href="#section3" class="section-btn">Make An Appointment</a>
     </section>
     <section class="page-section section5">
       <picture>
@@ -123,7 +167,7 @@
           alt=""
         />
       </picture>
-      <a href="#next" class="section-btn">Make An Appointment</a>
+      <a href="#section3" class="section-btn">Make An Appointment</a>
     </section>
     <section class="page-section section6">
       <picture>
@@ -140,7 +184,7 @@
           alt=""
         />
       </picture>
-      <a href="#next" class="section-btn">Make An Appointment</a>
+      <a href="#section3" class="section-btn">Make An Appointment</a>
     </section>
     <section class="page-section section7">
       <picture>
@@ -157,7 +201,58 @@
           alt=""
         />
       </picture>
+      <!-- Left-half div with form -->
+      <div class="form-container left">
+        <h1 class="text-white mt-4 mb-3">Discovery Now</h1>
+        <form class="form-content">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              placeholder="Phone"
+              inputmode="numeric"
+              maxlength="10"
+              required
+            />
+          </div>
+          <!-- Checkbox -->
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="termsCheck5"
+            />
+            <label class="form-check-label" for="termsCheck5">
+              Accept Customer Privacy
+            </label>
+          </div>
+          <!-- CAPTCHA placeholder -->
+          <div class="mb-3 text-white">[CAPTCHA]</div>
+          <button type="submit" class="btn-submit">Make An Appointment</button>
+        </form>
+      </div>
     </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("myButton"); // your button
+        btn.addEventListener("click", () => {
+          const section = document.getElementById("section2");
+          if (section) {
+            // check if element exists
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script>
   </body>
 
   <script>
