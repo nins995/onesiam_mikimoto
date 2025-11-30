@@ -177,6 +177,7 @@ button:hover {
 
   .slider-container {   
     width: 100%;
+    margin-left: 0vw;
   }
 
   .section4 .position-absolute {
