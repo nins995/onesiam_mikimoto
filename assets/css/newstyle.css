@@ -48,6 +48,19 @@ h1, h2 {
   .sticky-icon.right { right: 10px; }
 }
 
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+  .sticky-icon {
+    top: 10px;
+    height: 30px;
+  }
+  .sticky-icon.left { left: 10px; }
+  .sticky-icon.right { right: 10px; }
+}
+
 /* === Page Sections === */
 .page-section {
   position: relative;
@@ -75,6 +88,7 @@ h1, h2 {
   width: auto;
   object-fit: contain;
 }
+
 @media (max-width: 1023px) {
   .section-img {
     max-width: 100%;
@@ -82,6 +96,19 @@ h1, h2 {
     max-height: none;
   }
 }
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+  .section-img {
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
 
 /* === Section Buttons === */
 .section-btn {
@@ -113,6 +140,22 @@ h1, h2 {
 
 @media (max-width: 1023px) {
   .section-btn {
+        width: 58vw;
+        max-width: 300px;
+        font-size: 16px;
+        text-align: center;
+        bottom: calc(50% - 68vw);
+        height: 12vw;
+      
+  }
+}
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+    .section-btn {
         width: 58vw;
         max-width: 300px;
         font-size: 16px;
@@ -237,10 +280,10 @@ h1, h2 {
 /* === Mobile Responsive for Forms === */
 @media (max-width: 1023px) {
 
-.form-container .form-content {
-  padding-left: 30px;
-  padding-right: 30px;
-}
+    .form-container .form-content {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
     /* Left form fully centered */
     .form-container.left {
         left: 0;
@@ -269,7 +312,43 @@ h1, h2 {
     }
 }
 
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+    .form-container .form-content {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    /* Left form fully centered */
+    .form-container.left {
+        left: 0;
+        bottom: 15vw;
+        transform: unset;
+        width: 100%;
+        max-width: none;
+        /* margin: auto; */
+        padding-left: 10%;
+        padding-right: 10%;
+        top: unset;        
+    }
 
+    /* Right form: horizontally centered, vertical at half of page */
+    .form-container.right {
+        left: 50%;
+        top: 50%;            /* still top 50% */
+        transform: translateX(-50%); /* only horizontal centering */
+        width: 100%;
+        padding: 0 20px;
+        max-width: none;
+        max-width: 500px;
+    }
+    .form-container.right .form-image {
+        /* display: none; */
+        width: 100%;
+    }
+}
 
 .slider-container {
   position: relative;
@@ -322,6 +401,21 @@ button:hover {
   } 
 }
 
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+.slider-container {   
+    width: 100%;
+    margin-left: 0vw;
+  }
+
+  .section4 .position-absolute {
+    top: 0%;
+  } 
+}
+
 @media only screen and (max-width: 767px) {
 
   .slider-container {   
@@ -361,7 +455,26 @@ button:hover {
   max-width: 100vw;
   bottom: 0vh;
   position: absolute;
-  @media (min-width: 1024px) {
-    display: none;
-   }
 }
+
+
+
+@media (min-width: 1024px) {
+  .sec-7 {
+    display: none;
+  }
+  }
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+  .sec-7 {
+      display: inline;
+    }
+    .form-container .form-content {
+      width: 100%;
+        max-width: 500px;
+      }
+
+  }
