@@ -230,11 +230,15 @@ h1, h2 {
 @media (max-width: 1023px) {
     /* Left form fully centered */
     .form-container.left {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
+        left: 0;
+        bottom: 15vw;
+        transform: unset;
+        width: 100%;
         max-width: none;
+        /* margin: auto; */
+        padding-left: 10%;
+        padding-right: 10%;
+        top: unset;
     }
 
     /* Right form: horizontally centered, vertical at half of page */
@@ -338,4 +342,10 @@ button:hover {
   border-color: #fff !important;
   box-shadow: none !important;
   color: #fff !important;
+}
+
+.sec-7 {
+  max-width: 100vw;
+  bottom: 0vh;
+  position: absolute;
 }
