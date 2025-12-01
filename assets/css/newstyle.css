@@ -422,6 +422,23 @@ button:hover {
   } 
 }
 
+@media only screen 
+  and (width: 768px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+
+  .form-container.right .form-image {
+    width: 60%;
+    max-width: 60%;
+  }
+
+  .form-container.right .form-content {
+    min-width: 60% !important;
+    width: 60% !important;
+}
+}
+
 @media only screen and (max-width: 767px) {
 
   .slider-container {   
