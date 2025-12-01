@@ -1,1 +1,0 @@
-# onesiam_mikimoto
