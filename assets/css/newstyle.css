@@ -135,6 +135,7 @@ h1, h2 {
 
 .transparent-btn {
   padding: 0;
+  width: 100%;
   background: none;
   border: none;
 }
