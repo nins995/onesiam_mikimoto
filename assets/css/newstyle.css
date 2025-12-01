@@ -14,7 +14,7 @@ html, body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   height: 100%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   scroll-snap-type: y mandatory;
   background-color: #0d1429;
 }
@@ -29,21 +29,21 @@ h1, h2 {
 /* === Sticky Icons === */
 .sticky-icon {
   position: fixed;
-  top: 30px;
+  top: 5px;
   z-index: 1000;
   width: auto;
   height: 70px;
 }
-.sticky-icon.left { left: 30px; }
-.sticky-icon.right { right: 30px; }
+.sticky-icon.left { left: 20px; }
+.sticky-icon.right { right: 20px; }
 
 @media (max-width: 1023px) {
   .sticky-icon {
-    top: 20px;
+    top: 10px;
     height: 40px;
   }
-  .sticky-icon.left { left: 20px; }
-  .sticky-icon.right { right: 20px; }
+  .sticky-icon.left { left: 10px; }
+  .sticky-icon.right { right: 10px; }
 }
 
 /* === Page Sections === */
