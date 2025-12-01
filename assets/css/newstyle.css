@@ -33,6 +33,7 @@ h1, h2 {
   z-index: 1000;
   width: auto;
   height: 70px;
+  max-height: 12vh;
 }
 .sticky-icon.left { left: 20px; }
 .sticky-icon.right { right: 20px; }
