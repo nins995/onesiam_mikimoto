@@ -42,7 +42,7 @@ h1, h2 {
 @media (max-width: 1023px) {
   .sticky-icon {
     top: 10px;
-    height: 40px;
+    height: 30px;
   }
   .sticky-icon.left { left: 10px; }
   .sticky-icon.right { right: 10px; }
@@ -61,13 +61,13 @@ h1, h2 {
 }
 
 /* === Section Background Gradients === */
-.section1 { background: linear-gradient(180deg, #101e41, #0e1228); }
-.section2 { background: linear-gradient(180deg, #0e1228, #0e1228); }
-.section3 { background: linear-gradient(180deg, #0e1228, #0e1228); }
-.section4 { background: linear-gradient(180deg, #12162d, #1f264d); }
-.section5 { background: linear-gradient(180deg, #1f254e, #2f3c6b); }
-.section6 { background: linear-gradient(180deg, #2f3c6a, #344a7d); }
-.section7 { background: linear-gradient(180deg, #344a7d, #344a7d); }
+.section1 { background: linear-gradient(180deg, #101429, #101429); }
+.section2 { background: linear-gradient(180deg, #0d1329, #0e142b); }
+.section3 { background: linear-gradient(180deg, #0f1329, #13172c); }
+.section4 { background: linear-gradient(180deg, #13172d, #1f264d); }
+.section5 { background: linear-gradient(180deg, #1d264e, #303c6b); }
+.section6 { background: linear-gradient(180deg, #303d6b, #34477a); }
+.section7 { background: linear-gradient(180deg, #34497c, #34497c); }
 
 /* === Section Images === */
 .section-img {
@@ -102,6 +102,10 @@ h1, h2 {
 .section-btn:hover {
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.05);
+}
+.transparent-btn {
+  background: none;
+  border: none;
 }
 @media (max-width: 1023px) {
   .section-btn {
@@ -167,6 +171,20 @@ h1, h2 {
 /* Checkbox Label Gray */
 .form-check-label {
   color: #888;
+  font-size: 12px;
+}
+
+.form-check-input {
+  width: 12px;     /* default 1rem (16px), you can reduce more */
+  height: 12px;/* remove border */
+  border-radius: 0 !important; 
+  margin: 0 !important; 
+  vertical-align: middle !important;
+}
+.form-check {
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  gap: 8px;              /* spacing between box + text */
 }
 
 /* === Right-Half Form (Section 3) === */
@@ -215,13 +233,15 @@ h1, h2 {
     /* Right form: horizontally centered, vertical at half of page */
     .form-container.right {
         left: 50%;
-        top: 56%;            /* still top 50% */
+        top: 50%;            /* still top 50% */
         transform: translateX(-50%); /* only horizontal centering */
-        width: 80%;
+        width: 100%;
+        padding: 0 20px;
         max-width: none;
     }
     .form-container.right .form-image {
-        display: none;
+        /* display: none; */
+        width: 100%;
     }
 }
 
