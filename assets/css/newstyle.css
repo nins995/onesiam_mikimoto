@@ -107,10 +107,13 @@ h1, h2 {
 } */
 @media (max-width: 1023px) {
   .section-btn {
-    width: 240px;
-    max-width: 300px;
-    font-size: 16px;
-    text-align: center;
+        width: 58vw;
+        max-width: 300px;
+        font-size: 16px;
+        text-align: center;
+        bottom: calc(50% - 68vw);
+        height: 12vw;
+      
   }
 }
 
