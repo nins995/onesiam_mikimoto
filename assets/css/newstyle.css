@@ -86,8 +86,10 @@ h1, h2 {
 /* === Section Buttons === */
 .section-btn {
   position: absolute;
-  bottom: 60px;
+  bottom: 5vh;
+  height: 8vh;
   left: 50%;
+  width: 44vh;
   transform: translateX(-50%);
   padding: 12px 30px;
   font-size: 18px;
@@ -99,20 +101,25 @@ h1, h2 {
   z-index: 10;
   transition: all 0.3s ease;
 }
-.section-btn:hover {
+/* .section-btn:hover {
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.05);
-}
+} */
+
 .transparent-btn {
   background: none;
   border: none;
 }
+
 @media (max-width: 1023px) {
   .section-btn {
-    width: 240px;
-    max-width: 300px;
-    font-size: 16px;
-    text-align: center;
+        width: 58vw;
+        max-width: 300px;
+        font-size: 16px;
+        text-align: center;
+        bottom: calc(50% - 68vw);
+        height: 12vw;
+      
   }
 }
 
