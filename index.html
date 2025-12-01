@@ -261,54 +261,66 @@
     </script>
 
     <script>
-      let index = 0;
-      const slider = document.querySelector(".slider");
-      const slides = document.querySelectorAll(".slider img");
-      const total = slides.length;
+let index = 1; // เริ่มที่ภาพจริงภาพที่ 1 (หลังโคลน)
+const slider = document.querySelector(".slider");
+let slides = document.querySelectorAll(".slider img");
 
-      function updateSlide() {
-        const width = slider.clientWidth;
-        slider.style.transform = `translateX(${-width * index}px)`;
-      }
+// โคลนภาพ
+const firstClone = slides[0].cloneNode();
+const lastClone = slides[slides.length - 1].cloneNode();
 
-      function nextSlide() {
-        index = (index + 1) % total;
-        updateSlide();
-      }
+firstClone.classList.add("clone");
+lastClone.classList.add("clone");
 
-      function prevSlide() {
-        index = (index - 1 + total) % total;
-        updateSlide();
-      }
+slider.appendChild(firstClone);
+slider.insertBefore(lastClone, slides[0]);
 
-      // ปุ่มกด
-      document.querySelector(".next").onclick = nextSlide;
-      document.querySelector(".prev").onclick = prevSlide;
+slides = document.querySelectorAll(".slider img"); // update ใหม่
 
-      // Auto slide ทุก 3 วินาที
-      let auto = setInterval(nextSlide, 3000);
+function updateSlide(animate = true) {
+  const width = slider.clientWidth;
+  if (!animate) slider.style.transition = "none";
+  else slider.style.transition = "transform 0.4s ease";
 
-      // หยุด auto เมื่อเอา mouse ไปวาง
-      document.querySelector(".slider-container").onmouseenter = () =>
-        clearInterval(auto);
-      document.querySelector(".slider-container").onmouseleave = () =>
-        (auto = setInterval(nextSlide, 3000));
+  slider.style.transform = `translateX(${-width * index}px)`;
+}
 
-      // ปรับเมื่อหน้าจอเปลี่ยนขนาด
-      window.onresize = updateSlide;
+// ปุ่ม next
+function nextSlide() {
+  index++;
+  updateSlide();
+}
 
-      // Touch slide (มือถือ)
-      let startX = 0;
+// ปุ่ม prev
+function prevSlide() {
+  index--;
+  updateSlide();
+}
 
-      slider.addEventListener(
-        "touchstart",
-        (e) => (startX = e.touches[0].clientX)
-      );
-      slider.addEventListener("touchend", (e) => {
-        const endX = e.changedTouches[0].clientX;
-        if (endX < startX - 50) nextSlide();
-        if (endX > startX + 50) prevSlide();
-      });
+// เมื่อ transition จบ ตรวจสอบว่าอยู่ภาพ clone ไหม
+slider.addEventListener("transitionend", () => {
+  const actualTotal = slides.length - 2;
+  if (slides[index].classList.contains("clone")) {
+    if (index === slides.length - 1) index = 1;          // clone ท้าย → ภาพจริงแรก
+    if (index === 0) index = actualTotal;                // clone หน้า → ภาพจริงสุดท้าย
+    updateSlide(false); // กระโดดไปแบบไม่มี animation
+  }
+});
+
+// เริ่มต้น
+window.onload = () => updateSlide(false);
+
+// ปุ่มกด
+document.querySelector(".next").onclick = nextSlide;
+document.querySelector(".prev").onclick = prevSlide;
+
+// Auto slide
+let auto = setInterval(nextSlide, 3000);
+document.querySelector(".slider-container").onmouseenter = () => clearInterval(auto);
+document.querySelector(".slider-container").onmouseleave = () => auto = setInterval(nextSlide, 3000);
+
+// Resize
+window.onresize = () => updateSlide(false);
     </script>
   </body>
 </html>
