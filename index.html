@@ -39,7 +39,6 @@
           srcset="./assets/images/mikimoto/mikimoto-mobile-1.jpg"
         />
 
-
         <!-- Desktop image -->
         <img
           src="./assets/images/mikimoto/mikimoto-1.jpg"
@@ -56,7 +55,7 @@
           media="(max-width: 1023px)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-2.jpg"
         />
-         <source
+        <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-2.jpg"
         />
@@ -70,14 +69,14 @@
       </picture>
       <a href="#section3" class="section-btn"></a>
     </section>
-    <section id="section3" class="page-section section3 ">
+    <section id="section3" class="page-section section3">
       <picture>
         <!-- Mobile image -->
         <source
           media="(max-width: 1023px)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-3.jpg"
         />
-         <source
+        <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-3.jpg"
         />
@@ -130,7 +129,9 @@
           </div>
           <!-- CAPTCHA placeholder -->
           <div class="mb-3 text-white">[CAPTCHA]</div>
-          <button type="submit" class="transparent-btn"><img src="./assets/images/mikimoto/form-button.png" class="w-100" /></button>
+          <button type="submit" class="transparent-btn">
+            <img src="./assets/images/mikimoto/form-button.png" class="w-100" />
+          </button>
         </form>
       </div>
     </section>
@@ -141,7 +142,7 @@
           media="(max-width: 1023px)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-4N.jpg"
         />
-         <source
+        <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-4N.jpg"
         />
@@ -157,7 +158,7 @@
         <div class="slider-container">
           <div class="slider">
             <img src="./assets/images/mikimoto/product1.png?text=Slide+1" />
-            <img src="./assets/images/mikimoto/product2.png?text=Slide+2" />         
+            <img src="./assets/images/mikimoto/product2.png?text=Slide+2" />
             <img src="./assets/images/mikimoto/product3.png?text=Slide+3" />
           </div>
 
@@ -174,7 +175,7 @@
           media="(max-width: 1023px)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-5.jpg"
         />
-         <source
+        <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-5.jpg"
         />
@@ -194,7 +195,7 @@
           media="(max-width: 1023px)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-6.jpg"
         />
-         <source
+        <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-6.jpg"
         />
@@ -215,7 +216,7 @@
           srcset="./assets/images/mikimoto/mikimoto-mobile-7-1.jpg"
         />
 
-          <source
+        <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
           srcset="./assets/images/mikimoto/mikimoto-mobile-7-1.jpg"
         />
@@ -226,15 +227,15 @@
           alt=""
         />
       </picture>
-     
+
       <!-- Left-half div with form -->
       <div class="form-container left">
-       <img
+        <img
           src="./assets/images/mikimoto/mikimoto-7-text.png"
           class="form-image"
           alt="Image"
         />
-         <form class="form-content">
+        <form class="form-content">
           <div class="mb-2">
             <input
               type="text"
@@ -268,104 +269,103 @@
           </div>
           <!-- CAPTCHA placeholder -->
           <div class="mb-3 text-white">[CAPTCHA]</div>
-          <button type="submit" class="transparent-btn"><img src="./assets/images/mikimoto/form-button.png" class="w-100" /></button>
+          <button type="submit" class="transparent-btn">
+            <img src="./assets/images/mikimoto/form-button.png" class="w-100" />
+          </button>
         </form>
       </div>
-       <img
-          src="./assets/images/mikimoto/mikimoto-mobile-7-2.jpg"
-          class="sec-7"
-          alt="Image"
-        />
+      <img
+        src="./assets/images/mikimoto/mikimoto-mobile-7-2.jpg"
+        class="sec-7"
+        alt="Image"
+      />
     </section>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll('a[href^="#"]');
+        const links = document.querySelectorAll('a[href^="#"]');
 
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const targetId = this.getAttribute("href");
-      const target = document.querySelector(targetId);
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            const target = document.querySelector(targetId);
 
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
-  });
-});
-
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+      });
     </script>
 
     <script>
-let index = 1; // เริ่มที่ภาพจริงภาพที่ 1 (หลังโคลน)
-const slider = document.querySelector(".slider");
-let slides = document.querySelectorAll(".slider img");
+      let index = 1;
+      const slider = document.querySelector(".slider");
+      let slides = document.querySelectorAll(".slider img");
 
-// โคลนภาพ
-const firstClone = slides[0].cloneNode();
-const lastClone = slides[slides.length - 1].cloneNode();
+      // Clone first & last
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[slides.length - 1].cloneNode(true);
 
-firstClone.classList.add("clone");
-lastClone.classList.add("clone");
+      slider.appendChild(firstClone);
+      slider.insertBefore(lastClone, slides[0]);
 
-slider.appendChild(firstClone);
-slider.insertBefore(lastClone, slides[0]);
+      slides = document.querySelectorAll(".slider img");
 
-slides = document.querySelectorAll(".slider img"); // update ใหม่
+      // Set initial slide
+      function updateSlide(animate = true) {
+        const width = slider.clientWidth;
 
-function updateSlide(animate = true) {
-  const width = slider.clientWidth;
-  if (!animate) slider.style.transition = "none";
-  else slider.style.transition = "transform 0.4s ease";
+        slider.style.transition = animate ? "transform 0.4s ease" : "none";
+        slider.style.transform = `translateX(${-width * index}px)`;
+      }
 
-  slider.style.transform = `translateX(${-width * index}px)`;
-}
+      function nextSlide() {
+        if (index >= slides.length - 1) return;
+        index++;
+        updateSlide();
+      }
 
-// ปุ่ม next
-function nextSlide() {
-  index++;
-  updateSlide();
-}
+      function prevSlide() {
+        if (index <= 0) return;
+        index--;
+        updateSlide();
+      }
 
-// ปุ่ม prev
-function prevSlide() {
-  index--;
-  updateSlide();
-}
+      slider.addEventListener("transitionend", () => {
+        const realSlidesCount = slides.length - 2;
 
-// เมื่อ transition จบ ตรวจสอบว่าอยู่ภาพ clone ไหม
-slider.addEventListener("transitionend", () => {
-  const actualTotal = slides.length - 2;
-  
-  // เพิ่มการตรวจสอบก่อนเข้าถึง classList
-  if (index >= slides.length || index < 0) {
-    return; // ป้องกัน error
-  }
-  
-  if (slides[index] && slides[index].classList.contains("clone")) {
-    if (index === slides.length - 1) {
-      index = 1;          // clone ท้าย → ภาพจริงแรก
-    } else if (index === 0) {
-      index = actualTotal; // clone หน้า → ภาพจริงสุดท้าย
-    }
-    updateSlide(false); // กระโดดไปแบบไม่มี animation
-  }
-});
+        // If reached the cloned last slide → jump to real first
+        if (index === slides.length - 1) {
+          index = 1;
+          updateSlide(false);
+        }
 
-// เริ่มต้น
-window.onload = () => updateSlide(false);
+        // If reached the cloned first slide → jump to real last
+        if (index === 0) {
+          index = realSlidesCount;
+          updateSlide(false);
+        }
+      });
 
-// ปุ่มกด
-document.querySelector(".next").onclick = nextSlide;
-document.querySelector(".prev").onclick = prevSlide;
+      // Start position
+      window.onload = () => updateSlide(false);
 
-// Auto slide
-let auto = setInterval(nextSlide, 3000);
-document.querySelector(".slider-container").onmouseenter = () => clearInterval(auto);
-document.querySelector(".slider-container").onmouseleave = () => auto = setInterval(nextSlide, 3000);
+      // Buttons
+      document.querySelector(".next").onclick = nextSlide;
+      document.querySelector(".prev").onclick = prevSlide;
 
-// Resize
-window.onresize = () => updateSlide(false);
+      // Auto slide
+      let auto = setInterval(nextSlide, 3000);
+
+      document.querySelector(".slider-container").onmouseenter = () =>
+        clearInterval(auto);
+      document.querySelector(".slider-container").onmouseleave = () => {
+        auto = setInterval(nextSlide, 3000);
+      };
+
+      // Resize fix
+      window.onresize = () => updateSlide(false);
     </script>
   </body>
 </html>
