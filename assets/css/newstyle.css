@@ -29,7 +29,7 @@ h1, h2 {
 /* === Sticky Icons === */
 .sticky-icon {
   position: fixed;
-  top: 30px;
+  top: 10px;
   z-index: 1000;
   width: auto;
   height: 70px;
@@ -39,11 +39,11 @@ h1, h2 {
 
 @media (max-width: 1024px) {
   .sticky-icon {
-    top: 20px;
+    top: 10px;
     height: 40px;
   }
-  .sticky-icon.left { left: 20px; }
-  .sticky-icon.right { right: 20px; }
+  .sticky-icon.left { left: 10px; }
+  .sticky-icon.right { right: 10px; }
 }
 
 /* === Page Sections === */
