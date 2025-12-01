@@ -181,8 +181,8 @@ h1, h2 {
 
 /* Section 3 form image */
 .form-container.right .form-image {
-    width: auto;          /* allow natural width */
-    max-width: 400px;     /* do not exceed 500px */
+    width: 52vh;          /* allow natural width */
+    max-width: unset;     /* do not exceed 500px */
     height: auto;         /* maintain aspect ratio */
     margin-bottom: 10px;
     display: block;       /* block element for proper spacing */
@@ -195,8 +195,8 @@ h1, h2 {
 
 /* Form remains centered */
 .form-container.right .form-content {
-    width: 100%;
-    max-width: 400px;     /* form stays max 350px */
+    width: 52vh;
+    /* max-width: 400px;   */
     margin: 0 auto;       /* center form content */
 }
 
@@ -499,5 +499,70 @@ button:hover {
       width: 100%;
         max-width: 500px;
       }
+
+  }
+
+
+  @media (min-width: 1280px) {
+  .form-container.left {
+    position: absolute;
+        top: unset;
+        left: unset;
+        transform: unset;
+        width: 50%;
+        width: 130vh;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        z-index: 2;
+        /* background-color: red; */
+      
+    }	
+
+  .section7 .form-container .form-content {
+    width: 100%;
+    max-width: 72vh;
+    padding-left: 8vw;
+    padding-right: 8vw;
+
+  }
+  .section7 .form-image {
+    margin-left: 8vw;
+  }
+
+  }
+
+    @media (min-width: 1100px) {
+  .form-container.left {
+    position: absolute;
+        top: unset;
+        left: unset;
+        transform: unset;
+        width: 50%;
+        width: 130vh;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        z-index: 2;
+        /* background-color: red; */
+      
+    }	
+
+  .section7 .form-container .form-content {
+    width: 100%;
+    max-width: 72vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+  }
+  .section7 .form-image {
+    margin-left: 0vw;
+  }
 
   }
