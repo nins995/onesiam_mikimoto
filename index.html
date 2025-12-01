@@ -308,9 +308,18 @@ function prevSlide() {
 // เมื่อ transition จบ ตรวจสอบว่าอยู่ภาพ clone ไหม
 slider.addEventListener("transitionend", () => {
   const actualTotal = slides.length - 2;
-  if (slides[index].classList.contains("clone")) {
-    if (index === slides.length - 1) index = 1;          // clone ท้าย → ภาพจริงแรก
-    if (index === 0) index = actualTotal;                // clone หน้า → ภาพจริงสุดท้าย
+  
+  // เพิ่มการตรวจสอบก่อนเข้าถึง classList
+  if (index >= slides.length || index < 0) {
+    return; // ป้องกัน error
+  }
+  
+  if (slides[index] && slides[index].classList.contains("clone")) {
+    if (index === slides.length - 1) {
+      index = 1;          // clone ท้าย → ภาพจริงแรก
+    } else if (index === 0) {
+      index = actualTotal; // clone หน้า → ภาพจริงสุดท้าย
+    }
     updateSlide(false); // กระโดดไปแบบไม่มี animation
   }
 });
