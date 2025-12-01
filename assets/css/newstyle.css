@@ -33,7 +33,7 @@ h1, h2 {
   top: 5px;
   z-index: 1000;
   width: auto;
-  height: 70px;
+  height: 50px;
   max-height: 12vh;
 }
 .sticky-icon.left { left: 20px; }
@@ -138,16 +138,21 @@ h1, h2 {
 /* Section 3 form image */
 .form-container.right .form-image {
     width: auto;          /* allow natural width */
-    max-width: 500px;     /* do not exceed 500px */
+    max-width: 400px;     /* do not exceed 500px */
     height: auto;         /* maintain aspect ratio */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: block;       /* block element for proper spacing */
+}
+
+.form-container.left .form-image {
+  width: auto;          /* allow natural width */
+    max-width: 400px;     /* do not exceed 500px */
 }
 
 /* Form remains centered */
 .form-container.right .form-content {
     width: 100%;
-    max-width: 350px;     /* form stays max 350px */
+    max-width: 400px;     /* form stays max 350px */
     margin: 0 auto;       /* center form content */
 }
 
@@ -179,6 +184,7 @@ h1, h2 {
 .form-check-label {
   color: #888;
   font-size: 12px;
+  font-family: 'MyriadVariableConcept-Roman', sans-serif;
 }
 
 .form-check-input {
@@ -189,6 +195,8 @@ h1, h2 {
   vertical-align: middle !important;
 }
 .form-check {
+  padding-left: 0 !important;     /* remove Bootstrap padding */
+  margin-left: 0 !important;
   display: flex;
   align-items: center;   /* vertical alignment */
   gap: 8px;              /* spacing between box + text */
@@ -201,7 +209,7 @@ h1, h2 {
     left: 75%;                /* center of right half */
     transform: translate(-50%, -50%); /* horizontal center in right half and vertical center */
     width: 50%;               /* occupy right half */
-    max-width: 350px;
+    max-width: 400px;
     padding: 20px;
     border-radius: 8px;
     display: flex;
@@ -217,7 +225,7 @@ h1, h2 {
     left: 25%;                /* center of left half */
     transform: translate(-50%, -50%); /* horizontal center in left half and vertical center */
     width: 50%;               /* occupy left half */
-    max-width: 350px;
+    max-width: 400px;
     padding: 20px;
     border-radius: 8px;
     display: flex;
@@ -228,6 +236,11 @@ h1, h2 {
 
 /* === Mobile Responsive for Forms === */
 @media (max-width: 1023px) {
+
+.form-container .form-content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
     /* Left form fully centered */
     .form-container.left {
         left: 50%;
@@ -321,7 +334,7 @@ button:hover {
 /* Inputs */
 .form-control {
   background: transparent !important;
-  border: 1px solid #fff !important;
+  border: 1px solid #7f7f7f !important;
   color: #fff !important;
   border-radius: 0 !important;   /* ← square corners */
 }
