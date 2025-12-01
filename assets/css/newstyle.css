@@ -188,22 +188,31 @@ h1, h2 {
     display: block;       /* block element for proper spacing */
 }
 
-.form-container.left .form-image {
-  width: auto;          /* allow natural width */
-    max-width: 400px;     /* do not exceed 500px */
+.form-container.left .form-image 
+{
+  width: 100%;
+  margin: auto;
 }
+/* .form-container.left .form-image {
+   width: auto;         
+    max-width: 400px;    
+} */
 
 /* Form remains centered */
-.form-container.right .form-content {
-    width: 52vh;
+/* .form-container.right .form-content { */
+    /* width: 52vh; */
     /* max-width: 400px;   */
-    margin: 0 auto;       /* center form content */
-}
+    /* margin: 0 auto;       center form content */
+/* } */
 
 /* Form content */
 .form-container .form-content {
   width: 100%;
-  max-width: 350px;
+}
+
+.form-container.right .form-content {
+      width: 52vh;
+
 }
 
 /* Submit Button */
@@ -567,8 +576,8 @@ button:hover {
     margin-left: 8vw;
   } */
 
-   .section7 .form-container.left .form-image {
+   /* .section7 .form-container.left .form-image {
       width: 47vh;
        margin-left: 8vw;
-    }
+    } */
   }
