@@ -343,7 +343,7 @@ h1, h2 {
     /* Left form fully centered */
     .form-container.left {
         left: 0;
-        bottom: 15vw;
+        /* bottom: 15vw; */
         transform: unset;
         width: 100%;
         max-width: none;
