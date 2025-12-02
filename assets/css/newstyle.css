@@ -106,7 +106,7 @@ h1, h2 {
     max-width: 100%;
     height: auto;
     max-height: none;
-    margin-top: -100px;
+    margin-top: -50px;
   }
 }
 
@@ -144,7 +144,7 @@ h1, h2 {
 @media (max-width: 1023px) {
   .section-btn {
         width: 58vw;
-        max-width: 300px;
+        /* max-width: 300px; */
         font-size: 16px;
         text-align: center;
         bottom: calc(50% - 68vw);
@@ -158,14 +158,12 @@ h1, h2 {
   and (orientation: portrait)
   and (hover: none)
   and (pointer: coarse) {
-    .section-btn {
-        width: 58vw;
-        max-width: 300px;
+    .section-btn {      
+        width: 56vw;
         font-size: 16px;
         text-align: center;
-        bottom: calc(50% - 68vw);
-        height: 12vw;
-      
+        bottom: calc(50% - 68vw + 50px);
+        height: 9vw;      
   }
 }
 
@@ -507,7 +505,9 @@ button:hover {
   .sec-7 {
     display: none;
   }
-  }
+}
+
+
 @media only screen 
   and (width: 1024px)
   and (orientation: portrait)
@@ -520,6 +520,11 @@ button:hover {
       width: 100%;
         max-width: 500px;
       }
+
+
+    .section4 .position-absolute {
+      top: -4%;
+    } 
 
   }
 
