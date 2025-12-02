@@ -212,7 +212,7 @@ h1, h2 {
 }
 
 .form-container.right .form-content {
-      width: 52vh;
+      width: 48vh;
 
 }
 
@@ -291,6 +291,10 @@ h1, h2 {
 /* === Mobile Responsive for Forms === */
 @media (max-width: 1023px) {
 
+  .form-container.right .form-image {
+    margin-bottom: 5px;
+  }
+
   .form-container .form-content {
     padding-left: 30px;
     padding-right: 30px;
@@ -301,15 +305,14 @@ h1, h2 {
 
     /* Left form fully centered */
     .form-container.left {
-        left: 0;
-        bottom: 15vw;
-        transform: unset;
+      top: 50%;
+      left: 50%;
+        transform: translate(-50%, -50%);
         width: 100%;
         max-width: none;
         /* margin: auto; */
         padding-left: 10%;
         padding-right: 10%;
-        top: unset;
     }
 
     /* Right form: horizontally centered, vertical at half of page */
@@ -318,7 +321,7 @@ h1, h2 {
         top: 50%;            /* still top 50% */
         transform: translateX(-50%); /* only horizontal centering */
         width: 100%;
-        padding: 0 20px;
+        padding: 0 30px;
         max-width: none;
     }
     .form-container.right .form-image {
@@ -356,7 +359,7 @@ h1, h2 {
         top: 50%;            /* still top 50% */
         transform: translateX(-50%); /* only horizontal centering */
         width: 100%;
-        padding: 0 20px;
+        padding: 0 30px;
         max-width: none;
         max-width: 500px;
     }
@@ -457,7 +460,7 @@ button:hover {
   }
 
   .section4 .position-absolute {
-    top: 15%;
+    top: 7.5%;
   } 
   
 }
@@ -465,6 +468,7 @@ button:hover {
 /* Inputs */
 .form-control {
   background: transparent !important;
+  height: 3.5vh;
   border: 1px solid #7f7f7f !important;
   color: #fff !important;
   border-radius: 0 !important;   /* ← square corners */
@@ -490,6 +494,12 @@ button:hover {
   position: absolute;
 }
 
+
+@media (max-width: 1023px) {
+  .form-control {
+    height: 32px;
+  }
+}
 
 
 @media (min-width: 1024px) {
