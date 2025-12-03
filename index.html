@@ -100,7 +100,7 @@
           class="form-image"
           alt="Image"
         />
-        <form class="form-content">
+        <form class="form-content" id="form1">
           <div class="mb-2">
             <input
               type="text"
@@ -127,6 +127,7 @@
               name="check1"
               value=""
               id="termsCheck"
+              required
             />
             <label class="form-check-label" for="termsCheck">
               Accept Customer Privacy
@@ -235,7 +236,7 @@
 
       <!-- Left-half div with form -->
       <div class="form-container left">
-        <form class="form-content">
+        <form class="form-content" id="form2">
         <img
           src="./assets/images/mikimoto/mikimoto-7-text.png"
           class="form-image"
@@ -267,6 +268,7 @@
               name="check2"
               value=""
               id="termsCheck7"
+              required
             />
             <label class="form-check-label" for="termsCheck7">
               Accept Customer Privacy
@@ -279,11 +281,26 @@
           </button>
         </form>
       </div>
-      <!-- <img
-        src="./assets/images/mikimoto/mikimoto-mobile-7-2.jpg"
-        class="sec-7"
-        alt="Image"
-      /> -->
+    </section>
+    <section id="section8" class="page-section section8 d-none">
+      <picture>
+        <!-- Mobile image -->
+        <source
+          media="(max-width: 1023px)"
+          srcset="./assets/images/mikimoto/mikimoto-mobile-8.jpg"
+        />
+
+        <source
+          media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
+          srcset="./assets/images/mikimoto/mikimoto-mobile-8.jpg"
+        />
+        <!-- Desktop image -->
+        <img
+          src="./assets/images/mikimoto/mikimoto-8.jpg"
+          class="section-img"
+          alt=""
+        />
+      </picture>
     </section>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -300,6 +317,26 @@
             }
           });
         });
+
+        // Handle form submissions
+        const form1 = document.getElementById('form1');
+        const form2 = document.getElementById('form2');
+        const section8 = document.getElementById('section8');
+
+        function handleFormSubmit(e) {
+          e.preventDefault();
+          
+          // Show section 8
+          section8.classList.remove('d-none');
+          
+          // Scroll to section 8
+          setTimeout(() => {
+            section8.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+
+        form1.addEventListener('submit', handleFormSubmit);
+        form2.addEventListener('submit', handleFormSubmit);
       });
     </script>
 
